@@ -1,0 +1,21 @@
+<!--pages/home/home.wxml-->
+<view>
+    <!-- button的bindtap相当于onclick事件绑定 -->
+    <button class="myButton" bindtap="allFileList">全部</button>
+    <button class="myButton" bindtap="gotoFileList">文件</button>
+    <button class="myButton" bindtap="picFileList">图片</button>
+    <button class="myButton" bindtap="prvFileList">私密</button>
+    <button class="myButton" bindtap="uploadFile">文件上传</button>
+</view>
+<view>
+  <text>图片预览</text>
+</view>
+<view>
+  <text>最近文件</text>
+</view>
+<view>
+  <text>分享链接</text>
+</view>
+<view>
+  <text>每日心情</text>
+</view>

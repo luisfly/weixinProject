@@ -1,0 +1,35 @@
+<!--index.wxml-->
+<import src="tempTest.wxml"/>
+<wxs src="./index.wxs" module="indexText" />
+<view class="container">
+  <view class="userinfo">
+    <block wx:if="{{canIUseOpenData}}">
+      <view class="userinfo-avatar" bindtap="bindViewTap">
+        <open-data type="userAvatarUrl"></open-data>
+      </view>
+      <open-data type="userNickName"></open-data>
+    </block>
+    <block wx:elif="{{!hasUserInfo}}">
+      <button wx:if="{{canIUseGetUserProfile}}" bindtap="getUserProfile"> 获取头像昵称 </button>
+      <button wx:elif="{{canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
+      <view wx:else> 请使用1.4.4及以上版本基础库 </view>
+    </block>
+    <block wx:else>
+      <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
+      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+    </block>
+  </view>
+  <view class="usermotto">
+    <text class="user-motto">{{motto}} </text>
+  </view>
+  <view>
+    <!-- button的bindtap相当于onclick事件绑定 -->
+    <button class="myButton" bindtap="testClickButton">用户登录</button>
+  </view>
+  <block wx:if="{{showLabel}}">
+    <template is="item" data="{{text: 'this is a test'}}"></template>
+  </block>
+  <!--<block>
+    <cover-image src="../source/test.jpg" />
+  </block>-->
+</view>

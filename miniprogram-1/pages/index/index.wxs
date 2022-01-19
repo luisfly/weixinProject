@@ -1,0 +1,5 @@
+var indexText = "这是个测试按钮";
+
+module.exports = {
+  indexText: indexText
+}

@@ -1,0 +1,10 @@
+<!--pages/filelist/filelist.wxml-->
+<text>pages/filelist/filelist.wxml</text>
+<view><button bindtap="onGetNextFileList">点击</button></view>
+<view class="container">
+  <view>当前文件夹</view>
+  <!-- 循环文件列表，生成视图 -->
+  <view wx:for="{{files}}">
+    <image src="../source/file_icon.png" />
+  </view>
+</view>
